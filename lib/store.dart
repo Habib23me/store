@@ -3,6 +3,6 @@
 /// More dartdocs go here.
 library store;
 
-export 'src/model/model.dart';
+export 'src/model/user.dart';
 
 // TODO: Export any libraries intended for clients of this package.

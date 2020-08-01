@@ -1,11 +1,14 @@
 import 'package:mobx/mobx.dart';
+import 'package:store/util/factory.dart';
+import 'package:store/util/model.dart';
 
 part 'user.g.dart';
+part 'user_factory.dart';
 
 class User = UserBase with _$User;
 
-abstract class UserBase with Store {
-  UserBase({
+abstract class UserBase with Store implements Model {
+  UserBase._({
     this.id,
     this.username,
   });
@@ -13,11 +16,12 @@ abstract class UserBase with Store {
   @observable
   String username;
 
-  factory UserBase.fromJson(Map<String, dynamic> json) => User(
+  static UserBase _fromJson(Map<String, dynamic> json) => User._(
         id: json['_id'],
         username: json['username'],
       );
 
+  @override
   void copyWith(Map<String, dynamic> json) {
     username = json['username'];
   }

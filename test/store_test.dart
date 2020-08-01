@@ -1,5 +1,5 @@
 import 'package:mobx/mobx.dart';
-import 'package:store/store.dart';
+import 'package:store/src/model/user.dart';
 import 'package:test/test.dart';
 
 void main() async {
